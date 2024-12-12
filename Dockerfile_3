@@ -1,13 +1,13 @@
 # v3 复制config，并下载依赖
-FROM registry.cn-beijing.aliyuncs.com/gojuukaze/openwrt-build:v2
+FROM 10.10.10.10:5002/openwrt-build:v2
 
 USER opde:opde
 ENV HOME /home/opde
 
-WORKDIR /openwrt/immortalwrt
+WORKDIR /openwrt/lede
 
-COPY config_1 /openwrt/immortalwrt/.config
-RUN sudo chown opde:opde /openwrt/immortalwrt/.config
+COPY config_1 /openwrt/lede/.config
+RUN sudo chown opde:opde /openwrt/lede/.config
 RUN make defconfig
 
 RUN make download -j$(nproc)
