@@ -186,3 +186,4 @@ RUN make download -j$(nproc)
 
 另，取出的镜像不用解压，可以直接写入tf卡。
 
+docker build -t 10.10.10.10:5002/openwrt-build:v1 -f Dockerfile_1 .
